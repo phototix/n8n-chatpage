@@ -194,7 +194,9 @@
 
         // Assign the function to the window object so it's globally accessible
         window.sendPresetMessage = function(presetMessage) {
-            sendMessage(presetMessage);
+            // Grab present prompt from textarea instead
+            var strPrompt = document.getElementById(presetMessage).value;
+            sendMessage(strPrompt);
         };
 
         // Send a message when clicking the send button
